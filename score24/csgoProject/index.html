@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />    
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="msapplication-tap-highlight" content="no" />
+    
+    <title></title>
+    <link rel="stylesheet" href="css/comm.css">
+    <link rel="stylesheet" href="css/csgo.css">
+    
+</head>
+<body>
+	<!--筛选页面开始-->
+<div class="select_box dn">
+	<header>
+    	<img class="dl" src="img/sco_logo.png">
+    	<center>联赛筛选</center>
+      
+    </header>
+	<section class="screen-box">
+		<div class="screen-left dl">
+	    	<ul id="select_data">
+	        	<li class="">全部</li>
+	            <li class="sre-on">CSGO</li>
+	            <!--<li>CS<img src="img/dzjj/dj_p5.png"></li>
+	            <li>LOL<img src="img/dzjj/dj_p5.png"></li>
+	            <li>星际争霸<img src="img/dzjj/dj_p5.png"></li>-->
+	        </ul>
+	    </div>
+	    <div class="screen-right dl">
+	    	
+	    </div>
+	</section>
+</div>
+<!--筛选界面结束-->
+	<section class="fix_box dn">
+		<div class="white_box">
+			<ul>
+				<li>本场暂无详情数据</li>
+				<li  class="close_btn">关闭</li>
+			</ul>
+		</div>
+	</section>
+	
+<div class="all-box">
+	<header>
+    	<img class="dl" src="img/sco_logo.png">
+    	<center>电子竞技</center>
+        <a href="javascript:;" class="dr cs-header-r">
+        	 <div class="u-icon"></div>
+             <div class="u-icon"></div>
+             <div class="u-icon"></div>
+        </a>
+    </header>
+    <nav class="cs-nav">
+    	<ul>
+            <li class="oLi" data-status="1">未开始<i></i></li>
+            <li class="oLi" class="cs-hover" data-status="2">进行中<i></i></li>
+            <li class="oLi" data-status="3">已完赛<i></i></li>
+            
+        </ul>
+    </nav>
+<div id="wrapper">
+	<div id="scroller">
+		<div id="pullDown">
+			<span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新</span>
+		</div>   
+	    <!-- 未开始 -->
+	    <section class="cont-box dn" id="coming">
+	    	<!--<div class="cs-listbox">
+	        	<a href="javascript:;">
+	        	<div class="cs-titler">
+	            	<div class="cs-tit-left dl">未开始</div>
+	            	<div class="tc cs-tit-txt">2017 欧洲csgo锦标赛季后赛</div>
+	                <div class="cs-tit-right dr"><img src="img/cs_p1.png"></div>
+	            </div>
+	            <div class="cs-vs-txt">
+	            	<div class="vs-name dl tr">dsasfd</div>
+	                <div class="vs-vs">VS</div>
+	                <div class="vs-name dr">dsasfd</div>
+	            </div>
+	            <div class="cs-vs-time tc t14"><span>6月25日</span><span>19：00</span></div>
+	        	</a>
+	       </div>--> 
+	    </section>
+	    <!-- 进行中 -->
+	    <section class="cont-box" id="starting">
+	    	
+	    </section>
+	    <!-- 已完赛 -->
+	    <section class="cont-box dn" id="ending">
+	    	
+	    </section>
+	</div>
+	
+</div>    
+</div>     
+</body>
+<script src="js/sea.js" id="seajsnode"></script>
+<script src="js/config.js"></script>
+<script src="js/lib/iscroll.js"></script>
+<script type="text/javascript">
+	seajs.use('index', function(main) {
+		main.init();
+	})
+</script>
+
+</html>

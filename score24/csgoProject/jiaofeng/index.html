@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>score24</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pagination.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+
+</head>
+<body id="bgcolor">
+<header id="header-box">
+    <aside class="dl img-list"><a href="league.html"><img src="img/header_1.png"></a></aside>
+    <aside class="dr tc img-imgs"><a href="javascript:;"></a></aside>
+    <center><div class="tc img-logo"><a href="javascript:;"><img src="img/sco_logo.png" /></a></div></center>
+</header>
+
+<nav id="mainnav">
+    <ul class="navlist t16">
+        <li class="nav-on">足球数据</li>
+        <li><a href="home.html">足球比分</a></li>
+    </ul>
+</nav>
+<div class="header-height"></div>
+<div class="loader" id="loader">加载中</div>
+
+<script src="js/sea.js" id="seajsnode"></script>
+<script src="js/config.js"></script>
+<script>
+    seajs.use('index', function (main) {
+        main.init();
+    })
+</script>
+</body>
+</html>

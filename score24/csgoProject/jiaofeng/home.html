@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>score24</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/match.css">
+</head>
+<body>
+<header id="header-box">
+	<aside class="dl img-list"><a href="league.html"><img src="img/header_1.png"></a></aside>
+    <aside class="dr tc img-imgs"><a href="javascript:;"></a></aside>
+	<center><div class="tc img-logo"><a href="index.html"><img src="img/sco_logo.png"></a></div></center>
+</header>
+<nav id="mainnav">
+<ul class="navlist t16">
+    <li><a href="index.html">足球数据</a></li>
+    <li class="nav-on"><a href="home.html>足球比分</a></li>
+
+</ul>
+</nav>
+<div class="header-height"></div>
+
+<!--竞彩-->
+<section class="mainbox">
+    <!--周一-->
+    <div class="list-loading" id="topload"></div>
+    <div class="tc dn" id="topPic"><img src="img/pic.png"></div>
+    <div id="homeHtml" class="body-height"></div>
+    <div class="list-loading" id="bottomload"></div>
+
+    <script id="homeTemp" type="text/x-handlebars-template">
+
+	    {{#each list}}
+	    {{{dayHtml}}}
+	    <article class="tuesday-box t14" id = "{{fixtureId}}">
+	            <div class="score-time tuesday-time"><p class="{{css}}">{{competitionName}}</p><p>{{time}}</p><p>{{venueName}}</p></div>
+	            <div class="score-bf t14">
+	                <p class="tl">{{homeName}}</p>
+	                <p class="tb t16 tc">{{homeScore}} : {{awayScore}}</p>
+	                <p class="tr">{{awayName}}</p>
+	                <p><a href="live.html?homeId={{homeId}}&awayId={{awayId}}&fixtureId={{fixtureId}}&competitionId={{competitionId}}">析</a></p>
+	            </div>
+	        <div class="tc playback"><p class="triangle-top"></p>直播</div>
+	
+	    </article>
+	    {{/each}}
+    </script>
+</section>
+
+
+<footer class="footer tr">Genius Sports Group Limited, 25a Soho Square London, W1D 4FA</footer>
+<script src="js/sea.js" id="seajsnode"></script>
+<script src="js/config.js"></script>
+<script>
+    seajs.use('home', function (main) {
+        main.init();
+    })
+</script>
+</body>
+</html>

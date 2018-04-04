@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />    
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=yes"/>
+	<meta name="msapplication-tap-highlight" content="no" />
+    <title></title>
+    <link rel="stylesheet" href="css/comm.css">
+    <link rel="stylesheet" href="css/csgo.css">
+    
+</head>
+<body>
+	<header>
+    	<a class="oBack" href="javascript:;"><img class="dl cs-return" src="img/cs_p2.png"></a>
+    	<center></center>
+        <a href="javascript:;" class="dr cs-header-r">
+        	 <div class="u-icon"></div>
+             <div class="u-icon"></div>
+             <div class="u-icon"></div>
+        </a>
+    </header>
+    <nav class="data-nav">
+    	<ul>
+        	<li class="data-hover">即时数据<i></i></li>
+            <li>赛况</li>
+        </ul>
+    </nav>
+    <!-- 即时数据 -->
+	<section class="data-box">
+    	<div class="data-first oh">
+        	<div class="cs-titler">
+            	<!--<div class="cs-tit-left dl cs-over">已完结</div>
+            	<div class="tc cs-tit-txt">2017 欧洲csgo锦标赛季后赛</div>
+                <div class="cs-tit-right dr"><img src="img/cs_p1.png"></div>-->
+            </div>
+            <div class="cs-vs-txt">
+            	<!--<div class="vs-name dl tr">dsasfd</div>
+                <div class="vs-vs vs-bf vs-detail"><span>1</span><span class="vs-mgn">:</span><span>1</span></div>
+                <div class="vs-name dr">dsasfd</div>-->
+            </div>
+            <div class="sus-txt oh sus-frame jishi">
+            	<!--<div class="dl tr sus-name">拆弹成功</div>
+                <div class="sus-hh">
+                	<select name="" id="select-mune">
+                		<option value="">第一局</option>
+                		<option value="">第二局</option>
+                		<option value="">第三局</option>
+                	</select>
+                	<i></i>
+                </div>-->
+            </div>
+            <div class="sus-txt oh sus-detail">
+            	<!--<div class="dl sus-name tr sus-number">7</div>
+                <div class="sus-over">第16回合 已结束</div>
+                <div class="sus-number2 dr">18</div>-->
+            </div>
+            <div class="sus-msg oh sus-omap">
+            	<!--<div class="dl sus-map">地图：王者峡谷</div>
+                <div class="sus-msg-time">拆弹时间：40秒</div>
+                <div class="dr sus-vs-time">比赛时间：PT1M 55.2S</div>-->
+            </div>
+        </div>
+        <div class="support">
+        	<div class="tc supp-txt oh t12">本场比赛采用<span class="bureau"></span>局<span class="win"></span>胜，每局双方进行<span class="round"></span>个回合。</div>
+            <div class="supp-box">
+            	<div class="supp-box-lf"><img src="img/zcl.png"></div>
+                <div class="supp-box-lc"><div class="supp-pop"></div></div>
+                <div class="supp-box-lr"><img src="img/zcl2.png"></div>
+                <div class="supp-zcl">支持率</div>
+                <div class="supp-per">68%</div>
+                <div class="supp-per2">32%</div>
+            </div>
+        </div>
+        <div class="cont-nav">
+        	<ul class="rounds_number_all">
+            	<li><div class="nav-before">更多<i></i></div></li>
+                <!--<li>13回合</li>
+                <li>14回合</li>
+                <li>15回合</li>
+                <li class="hh-hover">16回合</li>-->
+            </ul>
+        </div>
+        <div class="poliband-box">
+            <div class="police-bandits">
+                <div class="police dl  pol-hover" data-jf="1" data-num="1">TEAM1数据（警察）</div>
+                <div class="bandits dr" data-jf="0">TEAM2数据（匪徒）</div>
+                <span class="dots"></span>
+            </div>
+            <!-- TEAM1数据（警察） -->
+            <div class="team-namebox">
+            	<div class="team-nav">
+                	<ul class="policeName">
+                    	<!--<li class="team-hover">name1<img src="img/yx.png"></li>
+                        <li>name2</li>
+                        <li>name3</li>
+                        <li>name4</li>
+                        <li>name5</li>-->
+                    </ul>
+                </div>
+                <div class="team-box" id="detail"></div>
+               	<script id="detailTemp" type="text/x-handlebars-template">
+                	<div class="combat-tit">
+                    	<div class="dl combat-lf"><i></i></div>
+                        <div class="dl combat-lc">战绩</div>
+                        <div class="dr combat-lr"><i></i></div>
+                    </div>
+                    <div class="combat-box">
+                   
+                    	<div class="combat-list">
+                            <div class="life dl">生命</div>
+                            {{#if healthPoints.c}}
+                            <div class="celadon cel-green">{{healthPoints.b}}</div>
+                            {{else}}
+                            <div class="celadon">{{healthPoints.b}}</div>
+                            {{/if}}
+                            {{#if healthPoints.c}}
+                            <div class="imgs1"><img src="img/cs_p4.png"></div>
+                            {{else}}
+                            <div class="imgs1"></div>
+                            {{/if}}
+                            <div class="scale"><i style="width:{{healthPoints.e}}%;"></i></div>
+                            <div class="celadon2">{{isAlive}}</div>
+                            <div class="dr imgs2">{{{isAliveImg}}}</div>
+                        </div>
+                        <div class="combat-list">
+                            <div class="life dl">助攻</div>
+                            {{#if assists.c}}
+                            <div class="celadon cel-red">{{assists.b}}</div>
+                            {{else}}
+                            <div class="celadon">{{assists.b}}</div>
+                            {{/if}}
+                            {{#if assists.c}}
+                            <div class="imgs1"><img src="img/cs_p5.png"></div>
+                            {{else}}
+                            <div class="imgs1"></div>
+                            {{/if}}
+                            <div class="scale"><i style="width:{{assists.e}}%;"></i></div>
+                            <div class="celadon2">占比</div>
+                            <div class="dr imgs2">{{assists.e}}%</div>
+                        </div>
+                        <div class="combat-list">
+                            <div class="life dl">挖雷</div>
+                            {{#if bombDefused.c}}
+                            <div class="celadon cel-red">{{bombDefused.b}}</div>
+                            {{else}}
+                            <div class="celadon">{{bombDefused.b}}</div>
+                            {{/if}}
+                            {{#if bombDefused.c}}
+                            <div class="imgs1"><img src="img/cs_p5.png"></div>
+                            {{else}}
+                            <div class="imgs1"></div>
+                            {{/if}}
+                           
+                            <div class="scale"><i style="width:{{bombDefused.e}}%;"></i></div>
+                            <div class="celadon2">占比</div>
+                            <div class="dr imgs2">{{bombDefused.e}}%</div>
+                        </div>
+                        <div class="combat-list">
+                            <div class="life dl">埋雷</div>
+                            {{#if bombPlanted.c}}
+                            <div class="celadon cel-red">{{bombPlanted.b}}</div>
+                            {{else}}
+                            <div class="celadon">{{bombPlanted.b}}</div>
+                            {{/if}}
+                            {{#if bombPlanted.c}}
+                            <div class="imgs1"><img src="img/cs_p5.png"></div>
+                            {{else}}
+                            <div class="imgs1"></div>
+                            {{/if}}
+                            <div class="scale"><i style="width:{{bombPlanted.e}}%;"></i></div>
+                            <div class="celadon2">占比</div>
+                            <div class="dr imgs2">{{bombPlanted.e}}%</div>
+                        </div>
+                        <div class="combat-list">
+                            <div class="life dl">爆头</div>
+                            {{#if headshots.c}}
+                            <div class="celadon cel-red">{{headshots.b}}</div>
+                            {{else}}
+                            <div class="celadon">{{headshots.b}}</div>
+                            {{/if}}
+                            {{#if headshots.c}}
+                            <div class="imgs1"><img src="img/cs_p5.png"></div>
+                            {{else}}
+                            <div class="imgs1"></div>
+                            {{/if}}
+                            <div class="scale"><i style="width:{{headshots.e}}%;"></i></div>
+                            <div class="celadon2">占比</div>
+                            <div class="dr imgs2">{{headshots.e}}%</div>
+                        </div>
+                        <div class="combat-list">
+                            <div class="life dl">输出</div>
+                            {{#if damageGiven.c}}
+                            <div class="celadon cel-red">{{damageGiven.b}}</div>
+                            {{else}}
+                            <div class="celadon">{{damageGiven.b}}</div>
+                            {{/if}}
+                            {{#if damageGiven.c}}
+                            <div class="imgs1"><img src="img/cs_p5.png"></div>
+                            {{else}}
+                            <div class="imgs1"></div>
+                            {{/if}}
+                            <div class="scale"><i style="width:{{damageGiven.e}}%;"></i></div>
+                            <div class="celadon2">占比</div>
+                            <div class="dr imgs2">{{damageGiven.e}}%</div>
+                        </div>
+                        <div class="combat-list">
+                            <div class="life dl">承伤</div>
+                            {{#if damageReceived.c}}
+                            <div class="celadon cel-red">{{damageReceived.b}}</div>
+                            {{else}}
+                            <div class="celadon">{{damageReceived.b}}</div>
+                            {{/if}}
+                            {{#if damageReceived.c}}
+                            <div class="imgs1"><img src="img/cs_p5.png"></div>
+                            {{else}}
+                            <div class="imgs1"></div>
+                            {{/if}}
+                            <div class="scale"><i style="width:{{damageReceived.e}}%;"></i></div>
+                            <div class="celadon2">占比</div>
+                            <div class="dr imgs2">{{damageReceived.e}}%</div>
+                        </div>
+                    
+                    </div>
+                    
+                  	<div class="combat-tit equip">
+                    	<div class="dl combat-lf"><i></i></div>
+                        <div class="dl combat-lc">装备</div>
+                        <div class="dr combat-lr"><i></i></div>
+                    </div>
+                    <div class="equip-box oh">
+                    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="equip-table">
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td class="equip-blue">花费{{spend}}</td>
+                            <td>剩余{{moneyRemaining.b}}</td>
+                            <td>&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td> 金币{{moneySpent.b}}</td>
+                            <td colspan="2">
+                            	<div class="equip-per"><i style="width:{{moneyPercent}}%;"></i></div>
+                            </td>
+                            <td>&nbsp;</td>
+                          </tr>
+                        </table>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" class="equip-table2">
+                          <tr id="oM">
+                           	{{{oNumber}}} 
+                          </tr>
+                          {{#each equipments}}
+                          <tr>
+                            <td>{{orderNo}}</td>
+                            <td>{{type}}</td>
+                            <td>{{name}}</td>
+                            <td>{{value}}</td>
+                          </tr>
+                          {{/each}}
+                        </table>
+                    </div>
+                    <div class="combat-tit">
+                   	  <div class="dl combat-lf"><i></i></div>
+                        <div class="dl combat-lc updata">最新更新：10分11秒前</div>
+                        <div class="dr combat-lr"><i></i></div>
+                    </div>
+                    
+             	</script>
+            </div>
+            <!-- TEAM2数据（匪徒） -->
+            <!--<div class="team-namebox dn">
+            	<div class="team-nav">
+                	<ul>
+                    	<li class="team-hover">name1<img src="img/C4zd.png"></li>
+                        <li>name2<img src="img/syx.png"></li>
+                        <li>name3</li>
+                        <li>name4</li>
+                        <li>name5</li>
+                    </ul>
+                </div>
+                <div class="team-box">
+                	<div class="combat-tit">
+                    	<div class="dl combat-lf"><i></i></div>
+                        <div class="dl combat-lc">战绩</div>
+                        <div class="dr combat-lr"><i></i></div>
+                    </div>
+                    <div class="combat-box">
+                    	<div class="combat-list">
+                            <div class="life dl">生命</div>
+                            <div class="celadon t12 cel-green">0</div>
+                            <div class="imgs1"><img src="img/cs_p4.png"></div>
+                            <div class="scale"><i></i></div>
+                            <div class="celadon2 cel-green">死亡</div>
+                            <div class="dr imgs2"><img src="img/ysw.png"></div>
+                        </div>
+                        <div class="combat-list">
+                            <div class="life dl">助攻</div>
+                            <div class="celadon cel-red">1</div>
+                            <div class="imgs1"><img src="img/cs_p5.png"></div>
+                            <div class="scale"><i style="width:22%;"></i></div>
+                            <div class="celadon2">占比</div>
+                            <div class="dr imgs2">22%</div>
+                        </div>
+                        <div class="combat-list">
+                            <div class="life dl">挖雷</div>
+                            <div class="celadon">1</div>
+                            <div class="imgs1"></div>
+                            <div class="scale"><i style="width:100%;"></i></div>
+                            <div class="celadon2">占比</div>
+                            <div class="dr imgs2">100%</div>
+                        </div>
+                        <div class="combat-list">
+                            <div class="life dl">埋雷</div>
+                            <div class="celadon">0</div>
+                            <div class="imgs1"></div>
+                            <div class="scale"><i></i></div>
+                            <div class="celadon2">占比</div>
+                            <div class="dr imgs2">0%</div>
+                        </div>
+                        <div class="combat-list">
+                            <div class="life dl">爆头</div>
+                            <div class="celadon">1</div>
+                            <div class="imgs1"></div>
+                            <div class="scale"><i style="width:22%;"></i></div>
+                            <div class="celadon2">占比</div>
+                            <div class="dr imgs2">22%</div>
+                        </div>
+                        <div class="combat-list">
+                            <div class="life dl">输出</div>
+                            <div class="celadon">100</div>
+                            <div class="imgs1"><img src="img/cs_p5.png"></div>
+                            <div class="scale"><i style="width:22%;"></i></div>
+                            <div class="celadon2">占比</div>
+                            <div class="dr imgs2">22%</div>
+                        </div>
+                        <div class="combat-list">
+                            <div class="life dl">生命</div>
+                            <div class="celadon">20</div>
+                            <div class="imgs1"><img src="img/cs_p5.png"></div>
+                            <div class="scale"><i style="width:22%;"></i></div>
+                            <div class="celadon2">占比</div>
+                            <div class="dr imgs2">22%</div>
+                        </div>
+                        
+                    </div>
+                  <div class="combat-tit equip">
+                    	<div class="dl combat-lf"><i></i></div>
+                        <div class="dl combat-lc">装备</div>
+                        <div class="dr combat-lr"><i></i></div>
+                    </div>
+                    <div class="equip-box oh">
+                    	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="equip-table">
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td class="equip-blue">花费100</td>
+                            <td>剩余1234567</td>
+                            <td>&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td> 金币1234567</td>
+                            <td colspan="2">
+                            	<div class="equip-per"><i style="width:22%;"></i></div>
+                            </td>
+                            <td>&nbsp;</td>
+                          </tr>
+                        </table>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" class="equip-table2">
+                          <tr>
+                            <td>编号</td>
+                            <td>类型</td>
+                            <td>武器</td>
+                            <td>价格</td>
+                          </tr>
+                          <tr>
+                            <td>武器1</td>
+                            <td>SecondaryWeapon</td>
+                            <td>AK47</td>
+                            <td>999999</td>
+                          </tr>
+                          <tr>
+                            <td>武器1</td>
+                            <td>SecondaryWeapon</td>
+                            <td>AK47</td>
+                            <td>999999</td>
+                          </tr>
+                          <tr>
+                            <td>武器1</td>
+                            <td>SecondaryWeapon</td>
+                            <td>AK47</td>
+                            <td>999999</td>
+                          </tr>
+                        </table>
+                    </div>
+                    <div class="combat-tit">
+                   	  <div class="dl combat-lf"><i></i></div>
+                        <div class="dl combat-lc updata">最新更新：10分11秒前</div>
+                        <div class="dr combat-lr"><i></i></div>
+                    </div>
+                    
+              </div>
+            </div>-->
+        </div>
+    </section>
+    <!-- 赛况 -->
+    <section class="data-box dn">
+    	<div class="data-first oh">
+        	<div class="cs-titler">
+            	<!--<div class="cs-tit-left dl cs-ongoing">进行中</div>
+            	<div class="tc cs-tit-txt">2017 欧洲csgo锦标赛季后赛</div>
+                <div class="cs-tit-right dr"><img src="img/cs_p1.png"></div>-->
+            </div>
+            <div class="cs-vs-txt">
+            	<!--<div class="vs-name dl tr">dsasfd</div>
+                <div class="vs-vs vs-bf vs-detail"><span>1</span><span class="vs-mgn">:</span><span>1</span></div>
+                <div class="vs-name dr">dsasfd</div>-->
+            </div>
+            <div class="sus-txt oh sus-frame">
+            	
+                <!--<div class="sus-hh sk-hh">
+                	<section>
+                		<option value="">第一局</option>
+                		
+                	</section>
+                </div>-->
+            </div>
+            <div class="sus-txt oh sus-detail">
+            	<!--<div class="dl sus-name tr sus-number">7</div>
+                <div class="sus-over cel-green">第16回合 已结束</div> 
+                <div class="sus-number2 dr">18</div>-->
+            </div>
+        </div>
+        <!--<div class="tc supp-txt oh t12 mgtop2">本场比赛采用5局3胜，每局双方进行31个回合，先到16者胜</div>-->
+        <div class="player-data">
+        	<div class="player play-on">战队数据</div>
+            <span class="dots"></span>
+            <div class="player2">选手数据</div>
+        </div>
+        <!-- 战队数据 -->
+        <div class="player-box oh" id="teamDetail"></div>
+        <script id="teamTemp" type="text/x-handlebars-template">
+        	<div class="ply-list t12">
+            	<div class="ply-lf"><i style="width:{{killsOne.b}}%"></i></div>
+            	{{#if killsOne.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+                <div class="ply-lr"><i style="width:{{killsTwo.b}}%"></i></div>
+                <div class="ply-nbmr">{{killsOne.b}}</div>
+                <div class="ply-js t14">击杀</div>
+                <div class="ply-nbmr2">{{killsTwo.b}}</div>
+                {{#if killsTwo.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+            </div>
+            <div class="ply-list t12">
+            	<div class="ply-lf"><i style="width:{{assistsOne.b}}%"></i></div>
+                {{#if assistsOne.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+                <div class="ply-lr"><i style="width:{{assistsTwo.b}}%"></i></div>
+                <div class="ply-nbmr">{{assistsOne.b}}</div>
+                <div class="ply-js t14">助攻</div>
+                <div class="ply-nbmr2">{{assistsTwo.b}}</div>
+                {{#if assistsTwo.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+            </div>
+            <div class="ply-list t12">
+            	<div class="ply-lf"><i style="width:{{deathsOne.b}}%;"></i></div>
+                {{#if deathsOne.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+                <div class="ply-lr"><i style="width:{{deathsTwo.b}}%;"></i></div>
+                <div class="ply-nbmr">{{deathsOne.b}}</div>
+                <div class="ply-js t14">被杀</div>
+                <div class="ply-nbmr2">{{deathsTwo.b}}</div>
+                {{#if deathsTwo.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+            </div>
+            <div class="ply-list t12">
+            	<div class="ply-lf"><i style="width:{{bombsDefusedOne.b}}%;"></i></div>
+                {{#if bombsDefusedOne.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+                <div class="ply-lr"><i style="width:{{bombsDefusedTwo.b}}%;"></i></div>
+                <div class="ply-nbmr">{{bombsDefusedOne.b}}</div>
+                <div class="ply-js t14">挖雷</div>
+                <div class="ply-nbmr2">{{bombsDefusedTwo.b}}</div>
+                {{#if bombsDefusedTwo.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+            </div>
+            <div class="ply-list t12">
+            	<div class="ply-lf"><i style="width:{{bombsPlantedOne.b}}%;"></i></div>
+                {{#if bombsPlantedOne.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+                <div class="ply-lr"><i style=" width:{{bombsPlantedTwo.b}}%;"></i></div>
+                <div class="ply-nbmr">{{bombsPlantedOne.b}}</div>
+                <div class="ply-js t14">埋雷</div>
+                <div class="ply-nbmr2">{{bombsPlantedTwo.b}}</div>
+                {{#if bombsPlantedTwo.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+            </div>
+            <div class="ply-list t12">
+            	<div class="ply-lf"><i style="width:{{headshotsOne.b}}%;"></i></div>
+                {{#if headshotsOne.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+                <div class="ply-lr"><i style=" width:{{headshotsTwo.b}}%;"></i></div>
+                <div class="ply-nbmr">{{headshotsOne.b}}</div>
+                <div class="ply-js t14">爆头</div>
+                <div class="ply-nbmr2">{{headshotsTwo.b}}</div>
+                {{#if headshotsTwo.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+            </div>
+            <div class="ply-list t12">
+            	<div class="ply-lf"><i style="width:{{firstKillsOne.b}}%;"></i></div>
+                {{#if firstKillsOne.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+                <div class="ply-lr"><i style=" width:{{firstKillsTwo.b}}%;"></i></div>
+                <div class="ply-nbmr">{{firstKillsOne.b}}</div>
+                <div class="ply-js t14">一血</div>
+                <div class="ply-nbmr2">{{firstKillsTwo.b}}</div>
+                {{#if firstKillsTwo.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+            </div>
+            <div class="ply-list t12">
+            	<div class="ply-lf"><i style="width:{{firstDeathsOne.b}}%;"></i></div>
+                {{#if firstDeathsOne.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+                <div class="ply-lr"><i style=" width:{{firstDeathsTwo.b}}%;"></i></div>
+                <div class="ply-nbmr">{{firstDeathsOne.b}}</div>
+                <div class="ply-js t14">送一血</div>
+                <div class="ply-nbmr2">{{firstDeathsTwo.b}}</div>
+                {{#if firstDeathsTwo.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+            </div>
+            <div class="ply-list t12">
+            	<div class="ply-lf"><i style="width:{{damageReceivedOne_percent}}%;"></i></div>
+                {{#if damageReceivedOne.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+                <div class="ply-lr"><i style=" width:{{damageReceivedTwo_percent}}%;"></i></div>
+                <div class="ply-nbmr">{{damageReceivedOne.b}}</div>
+                <div class="ply-js t14">承伤</div>
+                <div class="ply-nbmr2">{{damageReceivedTwo.b}}</div>
+                {{#if damageReceivedTwo.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+            </div>
+            <div class="ply-list t12">
+            	<div class="ply-lf"><i style="width:{{damageGivenOne_percent}}%;"></i></div>
+                {{#if damageGivenOne.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+                <div class="ply-lr"><i style=" width:{{damageGivenTwo_percent}}%;"></i></div>
+                <div class="ply-nbmr">{{damageGivenOne.b}}</div>
+                <div class="ply-js t14">输出</div>
+                <div class="ply-nbmr2">{{damageGivenTwo.b}}</div>
+                {{#if damageGivenTwo.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+            </div>
+            <div class="ply-list t12">
+            	<div class="ply-lf"><i style="width:{{roundsSurvivedOne.b}}%;"></i></div>
+                {{#if roundsSurvivedOne.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+                <div class="ply-lr"><i style=" width:{{roundsSurvivedTwo.b}}%;"></i></div>
+                <div class="ply-nbmr">{{roundsSurvivedOne.b}}</div>
+                <div class="ply-js t14">存局</div>
+                <div class="ply-nbmr2">{{roundsSurvivedTwo.b}}</div>
+                {{#if roundsSurvivedTwo.c}}
+                <div class="ply-lc"><img src="img/cs_p6.png"></div>
+                {{else}}
+                <div class="ply-lc"></div>
+                {{/if}}
+            </div>
+            <div class="combat-tit">
+	        	<div class="dl combat-lf"><i></i></div>
+	            	<div class="dl combat-lc updata">最新更新：{{updateTime}}</div>
+	            	<div class="dr combat-lr"><i></i></div>
+	        	</div>
+	        </div>
+        </script>
+        <!-- 选手数据 -->
+        <div class="player-box dn" id="playerDataBox"></div>
+        <script id="playerData" type="text/x-handlebars-template">
+       		<div class=" player-tit">
+            	<div class="dl combat-lf"><i></i></div>
+            	<div class="dl combat-lc">主队</div>
+            	<div class="dr combat-lr"><i></i></div>
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="play-table">
+              <tr class="play-dele">
+                <td colspan="6">&nbsp;</td>
+              </tr>
+              <tr class="ply-t14 policeNam">
+                <td>&nbsp;</td>
+                {{#each playerNameP}}
+                <td>{{b}}</td>
+               	{{/each}}
+              </tr>
+              
+              <tr>
+                <td>击杀</td>
+                {{#each killsArr}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              
+              <tr>
+                <td>助攻</td>
+                {{#each assistsArr}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>被杀</td>
+                {{#each deathsArr}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>挖雷</td>
+                {{#each bombsDefusedArr}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>埋雷</td>
+                {{#each bombsPlantedArr}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>爆头</td>
+                {{#each headshotsArr}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>一血</td>
+                {{#each firstKillsArr}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>送一血</td>
+                {{#each firstDeathsArr}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>生存</td>
+                {{#each roundsSurvivedArr}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>输出</td>
+                {{#each damageGivenArr}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>承伤</td>
+                {{#each damageReceivedArr}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+            </table>
+            <div class=" player-tit">
+            	<div class="dl combat-lf"><i></i></div>
+            	<div class="dl combat-lc">客队</div>
+            	<div class="dr combat-lr"><i></i></div>
+            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="play-table">
+              <tr class="play-dele">
+                <td colspan="6">&nbsp;</td>
+              </tr>
+              <tr class="ply-t14 policeNam">
+                <td>&nbsp;</td>
+                {{#each playerNameG}}
+                <td>{{b}}</td>
+               	{{/each}}
+              </tr>
+              
+              <tr>
+                <td>击杀</td>
+                {{#each killsArr1}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              
+              <tr>
+                <td>助攻</td>
+                {{#each assistsArr1}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>被杀</td>
+                {{#each deathsArr1}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>挖雷</td>
+                {{#each bombsDefusedArr1}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>埋雷</td>
+                {{#each bombsPlantedArr1}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>爆头</td>
+                {{#each headshotsArr1}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>一血</td>
+                {{#each firstKillsArr1}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>送一血</td>
+                {{#each firstDeathsArr1}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>生存</td>
+                {{#each roundsSurvivedArr1}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>输出</td>
+                {{#each damageGivenArr1}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+              <tr>
+                <td>承伤</td>
+                {{#each damageReceivedArr1}}
+                <td>
+                	{{#if c}}
+	                <span class=" ply-red"></span><span class="ply-flas"><img src="img/cs_p6.png"></span>
+	                {{else}}
+	                
+	                {{/if}}
+                	{{b}}
+                </td>
+                {{/each}}
+              </tr>
+            </table>
+            <div class="combat-tit">
+		        	<div class="dl combat-lf"><i></i></div>
+		            	<div class="dl combat-lc updata">最新更新：10分11秒前</div>
+		            	<div class="dr combat-lr"><i></i></div>
+		        	</div>
+		    </div>
+        </script>
+         
+    </section>
+<!--局数弹出框-->
+
+<section id="popbox" class="dn popbox">
+		<div id="pop-listbox">
+	        <div class="pop-list frame_num">
+	            <!--<a>第14回合</a>
+	            <a class="pop-hover">第15回合</a>
+	            <a>第16回合</a>-->
+	        </div>
+	        <div class="closebn"></div>
+	    </div>
+</section>
+<!--回合数弹出框-->
+<div class="dn" id="rounds" style="z-index:1000;width:100%;height:100%;background:black;position:fixed;top:0;background: rgba(0,0,0,0.5);">
+	<section id="rounds-box">
+			<div id="pop-listbox">
+		        <div class="pop-list rounds_num pop-list-round">
+		            <!--<a>第14回合</a>
+		            <a class="pop-hover">第15回合</a>
+		            <a>第16回合</a>-->
+		        </div>
+		        <div class="closebn closebtn"></div>
+		    </div>
+	</section>
+</div>
+<script src="js/sea.js" id="seajsnode"></script>
+<script src="js/config.js"></script>
+<script type="text/javascript">
+	seajs.use('detail', function(main) {
+		main.init();
+	})
+</script>
+</body>
+</html>

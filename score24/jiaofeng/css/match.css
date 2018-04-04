@@ -1,0 +1,125 @@
+@charset "utf-8";
+.g0 { background: #336699;}/*其它*/
+.g1 { background: #CC6600;}/*--A3冠军--*/
+.g2 { background: #009900;}/*--东亚四强赛--*/
+.g3 { background: #FFE000;}/*--世界杯--*/
+.g4 { background: #CC9900;}/*--世界俱乐部冠军杯--*/
+.g5 { background: #660000;}/*--世界杯预选赛--*/
+.g6 { background: #339999;}/*--世界青年足球锦标赛--*/
+.g7 { background: #990000;}/*--中国甲级联赛--*/
+.g8 { background: #C94F1B;}/*--中联杯--*/
+#dcc .g9, .g9 { background: #660000;}/*--中国超级联赛--*/
+#dcc .g10, .g10 { background: #006699;}/*--丹麦超级联赛--*/
+#dcc .g11, .g11 { background: #CCC700;}/*--乌克兰甲级联赛--*/
+#dcc .g12, .g12 { background: #336699;}/*--亚洲冠军联赛--*/
+#dcc .g13, .g13 { background: #990000;}/*--亚洲锦标赛--*/
+#dcc .g14, .g14 { background: #37BE5A;}/*--亚洲锦标赛预选赛--*/
+#dcc .g15, .g15 { background: #00A653;}/*--南美解放者杯--*/
+#dcc .g16, .g16 { background: #6666FF;}/*--俄罗斯超级联赛--*/
+#dcc .g17, .g17 { background: #FF7000;}/*--澳大利亚超级联赛--*/
+#dcc .g18, .g18 { background: #4B5553;}/*--保利亚甲级联赛--*/
+#dcc .g19, .g19 { background: #663300;}/*--克罗地亚甲级联赛--*/
+#dcc .g20, .g20 { background: #3A571C;}/*--匈牙利甲级联赛--*/
+#dcc .g21, .g21 { background: #0E6C00;}/*--杯赛--*/
+#dcc .g22, .g22 { background: #663366;}/*--和平杯--*/
+#dcc .g23, .g23 { background: #996633;}/*--图图杯--*/
+#dcc .g24, .g24 { background: #25155F;}/*--塞尔维亚甲级联赛--*/
+#dcc .g25, .g25 { background: #5985D3;}/*--摩西甲--*/
+#dcc .g26, .g26 { background: #CC6699;}/*--奥地利乙级联赛--*/
+#dcc .g27, .g27 { background: #663366;}/*--奥地利甲级联赛--*/
+#dcc .g28, .g28 { background: #FF60AF;}/*--女世界杯--*/
+#dcc .g29, .g29 { background: #006366;}/*--威尔士超--*/
+#dcc .g30, .g30 { background: #009900;}/*--巴西甲级联赛--*/
+#dcc .g31, .g31 { background: #006633;}/*--巴西杯--*/
+#dcc .g32, .g32 { background: #0066CC;}/*--希腊甲级联赛--*/
+#dcc .g33, .g33 { background: #AFA0DB;}/*德国乙级联赛*/
+#dcc .g34, .g34 { background: #AAAA00;}/*德北*/
+#dcc .g35, .g35 { background: #009099;}/*德南*/
+#dcc .g36, .g36 { background: #669966;}/*德国杯*/
+#dcc .g37, .g37 { background: #006600;}/*德国甲级联赛*/
+#dcc .g38, .g38 { background: #006600;}/*德联杯*/
+#dcc .g39, .g39 { background: #33CCCC;}/*意丙A*/
+#dcc .g40, .g40 { background: #57BBFF;}/*意丙B*/
+#dcc .g41, .g41 { background: #AC00DB;}/*意大利乙级联赛*/
+#dcc .g42, .g42 { background: #3E3E5B;}/*意大利杯*/
+#dcc .g43, .g43 { background: #3C3CFF;}/*意大利超级杯*/
+#dcc .g44, .g44 { background: #0000FF;}/*意大利甲级联赛*/
+#dcc .g45, .g45 { background: #D3A55F;}/*挪威甲级联赛*/
+#dcc .g46, .g46 { background: #006699;}/*挪威超级联赛*/
+#dcc .g47, .g47 { background: #666666;}/*挪威杯*/
+#dcc .g48, .g48 { background: #A97A1B;}/*捷克甲级联赛*/
+#dcc .g49, .g49 { background: #E3004A;}/*斯伐克甲级联赛*/
+#dcc .g50, .g50 { background: #6DA5A5;}/*斯甲*/
+#dcc .g51, .g51 { background: #336666;}/*日本职业联赛*/
+#dcc .g52, .g52 { background: #22C126;}/*日本乙级联赛*/
+#dcc .g53, .g53 { background: #08855C;}/*日本联赛杯*/
+#dcc .g54, .g54 { background: #003306;}/*日本天皇杯*/
+#dcc .g55, .g55 { background: #009900;}/*日本超级杯*/
+#dcc .g56, .g56 { background: #AABDD8;}/*智利甲级联赛*/
+#dcc .g57, .g57 { background: #666633;}/*欧洲冠军联赛*/
+#dcc .g58, .g58 { background: #CC9933;}/*欧洲杯*/
+#dcc .g59, .g59 { background: #8A4835;}/*比利时乙级联赛*/
+#dcc .g60, .g60 { background: #CC9900;}/*比利时杯*/
+#dcc .g61, .g61 { background: #CC6666;}/*比利时甲级联赛*/
+#dcc .g62, .g62 { background: #FF6600;}/*法国乙级联赛*/
+#dcc .g63, .g63 { background: #602D82;}/*法国杯*/
+#dcc .g64, .g64 { background: #128FCD;}/*法国超级杯*/
+#dcc .g65, .g65 { background: #993333;}/*法国甲级联赛*/
+#dcc .g66, .g66 { background: #6877CA;}/*法国联赛杯*/
+#dcc .g67, .g67 { background: #0084DB;}/*波兰甲级联赛*/
+#dcc .g68, .g68 { background: #513888;}/*海湾杯*/
+#dcc .g69, .g69 { background: #9EEEEE;}/*爱尔兰甲级联赛*/
+#dcc .g70, .g70 { background: #3399CC;}/*爱尔兰超级联赛*/
+#dcc .g71, .g71 { background: #16A570;}/*瑞典甲级联赛*/
+#dcc .g72, .g72 { background: #996666;}/*瑞典超级联赛*/
+#dcc .g73, .g73 { background: #004488;}/*瑞典杯*/
+#dcc .g74, .g74 { background: #998080;}/*瑞士甲级联赛*/
+#dcc .g75, .g75 { background: #666666;}/*瑞士超级联赛*/
+#dcc .g76, .g76 { background: #A68E5E;}/*皇家联赛杯*/
+#dcc .g77, .g77 { background: #CCA800;}/*罗尼亚*/
+#dcc .g78, .g78 { background: #FF3366;}/*美洲杯*/
+#dcc .g79, .g79 { background: #6600FF;}/*美国职业大联盟*/
+#dcc .g80, .g80 { background: #770088;}/*中北美金杯赛*/
+#dcc .g81, .g81 { background: #BD4FEC;}/*老虎杯*/
+#dcc .g82, .g82 { background: #333399;}/*联合会*/
+#dcc .g83, .g83 { background: #660000;}/*欧洲联盟杯--欧罗巴联赛*/
+#dcc .g84, .g84 { background: #8EAD12;}/*欧洲超级杯*/
+#dcc .g85, .g85 { background: #666699;}/*芬兰超级联赛*/
+#dcc .g86, .g86 { background: #996666;}/*苏格兰甲级联赛*/
+#dcc .g87, .g87 { background: #666699;}/*苏格兰联赛杯*/
+#dcc .g88, .g88 { background: #339966;}/*苏格兰超级联赛*/
+#dcc .g89, .g89 { background: #41BE76;}/*苏格兰足总杯*/
+#dcc .g90, .g90 { background: #6D5923;}/*英格兰乙级联赛*/
+#dcc .g91, .g91 { background: #0000CC;}/*英格兰冠军联赛*/
+#dcc .g92, .g92 { background: #999933;}/*英格兰甲级联赛*/
+#dcc .g93, .g93 { background: #464611;}/*英格兰联赛杯*/
+#dcc .g94, .g94 { background: #DCB352;}/*英格兰社区盾杯*/
+#dcc .g95, .g95 { background: #003366;}/*英格兰足总杯*/
+#dcc .g96, .g96 { background: #000099;}/*英格兰超级联赛*/
+#dcc .g97, .g97 { background: #009973;}/*英非*/
+#dcc .g98, .g98 { background: #5B1D85;}/*荷兰乙级联赛*/
+#dcc .g99, .g99 { background: #CC9999;}/*荷兰杯*/
+#dcc .g100, .g100 { background: #FF2F73;}/*荷兰超级杯*/
+#dcc .g101, .g101 { background: #666600;}/*荷兰甲级联赛*/
+#dcc .g102, .g102 { background: #003366;}/*葡萄牙乙级联赛*/
+#dcc .g103, .g103 { background: #A2BC25;}/*葡萄牙超级联赛*/
+#dcc .g104, .g104 { background: #CB194C;}/*葡萄牙联赛杯*/
+#dcc .g105, .g105 { background: #009966;}/*葡萄牙杯*/
+#dcc .g106, .g106 { background: #009966;}/*葡萄牙超级杯*/
+#dcc .g107, .g107 { background: #DB00DB;}/*西班牙乙级联赛*/
+#dcc .g108, .g108 { background: #009393;}/*西班牙杯*/
+#dcc .g109, .g109 { background: #33BBCC;}/*西班牙超级杯*/
+#dcc .g110, .g110 { background: #98CCFF;}/*西班牙国王杯*/
+#dcc .g111, .g111 { background: #006633;}/*西班牙甲级联赛*/
+#dcc .g112, .g112 { background: #006600;}/*足协杯*/
+#dcc .g113, .g113 { background: #9999CC;}/*足总杯*/
+#dcc .g114, .g114 { background: #3399CC;}/*阿根廷甲级联赛*/
+#dcc .g115, .g115 { background: #996666;}/*青年欧*/
+#dcc .g116, .g116 { background: #666666;}/*非洲国家杯*/
+.g117 { background: #3A5500;}/*世界U20锦标赛*/
+.g118 { background: #3A794E;}/*欧洲U21锦标赛*/
+.g119 { background: #339933;}/*韩国职业联赛*/
+.g120 { background: #003333;}/*国际赛*/
+.g121 { background: #3A7500;}/*国际足联联合会杯*/
+.g112 { background: #00A8A8;}/*俱乐部友谊赛*/
+.g113 { background: #336699;}/*其它*/

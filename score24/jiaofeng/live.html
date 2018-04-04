@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>直播/score24</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pagination.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+</head>
+<body id="bgcolor">
+<header class="header-box">
+    <asside class="title herd-back"><a href="home.html">直播</a></asside>
+</header>
+
+
+<div class="header-height2"></div>
+
+
+
+<section id="wrap-box">
+    <!--导航切换-->
+    <section class="analysis-main">
+
+
+        <!--直播-->
+        <div class="analysis-box oh ">
+            <div class="live-nav">
+                <ul id="tabBtn">
+                    <li class="live-on">比赛直播</li>
+                    <li>技术统计</li>
+                </ul>
+            </div>
+            <!--比赛直播-->
+            <section class="live-box oh" id="liveBox">
+                <div class="tc live-map live-windows">
+
+                    <iframe id="live-iframe" src="" width="100%" height="300"></iframe>
+
+                </div>
+                <div id="liveHtml"></div>
+                <script id="liveTemp" type="text/x-handlebars-template">
+
+                    {{#each list}}
+                    <div class="line_02">
+                        <p></p><p></p>
+                    </div>
+                    <div class="live-cont">
+                        <div class="circle_02 circle_03">
+                            <span><img src="img/{{dtype}}.png"></span>
+                        </div>
+                    </div>
+                    <div class="live-name{{css}}">
+                        <div >{{{homeValue}}}{{{awayValue}}}</div>
+                        <div>{{time}}</div>
+                    </div>
+                    {{/each}}
+                </script>
+
+        </section>
+            <!--技术统计-->
+            <section class="data-box oh dn" id="dataBox">
+
+
+
+
+
+
+                <div class="live-rate-box oh">
+                    <div id="dataHtml"></div>
+                    <script id="dataTemp" type="text/x-handlebars-template">
+                    <div class="live-rate-list oh">
+                        <div class="rate-li oh">
+                            <p class="tl">{{a}}</p><p class="tc">{{stype}}</p><p class="tr">{{b}}</p>
+                        </div>
+                        <div class="rate-bar oh">
+                            <aside class="dl barContro_space">
+                                <span class="live-vader" style="width:{{a1}}%"></span>
+                            </aside>
+                            <aside class="dr barContro_space-two">
+                                <span class="live-vader-two" style="width:{{b1}}%"></span>
+                            </aside>
+                        </div>
+                    </div>
+                </script>
+
+                </div>
+
+        </section>
+        </div>
+    </section>
+    <footer class="footer tr">Genius Sports Group Limited, 25a Soho Square London, W1D 4FA</footer>
+</section>
+<script src="js/lib/Chart.js"></script>
+<script src="js/sea.js" id="seajsnode"></script>
+<script src="js/config.js"></script>
+<script>
+    seajs.use('live', function (main) {
+        main.init();
+    })
+</script>
+</body>
+</html>
+

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>  </title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pagination.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+</head>
+<body id="bgcolor">
+<header id="header-box">
+	<aside class="dl img-list"><a href="league.html"><img src="img/header_1.png"></a></aside>
+    <aside class="dr tc img-imgs"><a href="javascript:;"><img src="" /></a></aside>
+	<center><div class="tc img-logo"><a href="index.html"><img src="img/sco_logo.png"></a></div></center>
+</header>
+<!--<nav id="mainnav">
+    <ul class="navlist t16">
+        <li class="nav-on">足球数据</li>
+        <li><a href="home.html">足球比分</a></li>
+    </ul>
+</nav>-->
+<div class="header-height"></div>
+<section id="wrap-box">
+    <div id="navBox" class="nav-box">
+        <ul id="homeNav" class="home-nav"></ul>
+        <ul id="seasonsNav" class="seasons-nav"></ul>
+        <ul id="awayNav" class="away-nav"></ul>
+    </div>
+    <div class="item-list" id="homeBtn">-</div>
+    <div class="item-list" id="seasonsBtn">-</div>
+    <div class="item-list" id="awayBtn">-</div>
+
+
+    <!--导航切换-->
+    <section class="analysis-main oh">
+        <div class="analysis-nav oh">
+            <ul id="tabBox">
+                <li data-val="tables">积分榜</li>
+                <li data-val="statistics">统计</li>
+                <li data-val="head2Head">交锋</li>
+                <li data-val="fixtures">赛程</li>
+                <li data-val="topScorers">球员榜</li>
+                <li data-href="#"></li>
+                <li data-href="#"></li>
+                <li data-href="#"></li>
+            </ul>
+        </div>
+        <!--积分榜-->
+        <div class="analysis-box oh dn" id="tablesBox">
+            <section class="bjcolor"><div class="title-jfb tc">积分榜</div></section>
+
+            <div id="tablesHtml"></div>
+            <script id="tablesTemp" type="text/x-handlebars-template">
+
+
+            <div class="analysis-tab integral">
+                <h2 class="tc title-item">全部</h2>
+                <table width="100%" border="0" cellspacing="0" class="analysis-jfbox">
+                    <thead>
+                    <tr>
+                        <th width="9%">赛事</th>
+                        <th width="19%">球队</th>
+                        <th width="9%">赛</th>
+                        <th width="9%">胜</th>
+                        <th width="9%">平</th>
+                        <th width="9%">负</th>
+                        <th width="9%">进球</th>
+                        <th width="9%">失球</th>
+                        <th width="9%">净胜</th>
+                        <th width="9%">积分</th>
+                    </tr>
+                    </thead>
+                    <tbody id="ana-tab">
+
+
+
+
+                    {{#each total}}
+                    <tr class="{{css}}">
+                        <td>{{i}}</td>
+                        <td class="tl">{{name}}</td>
+                        <td>{{gp}}</td>
+                        <td>{{w}}</td>
+                        <td>{{d}}</td>
+                        <td>{{l}}</td>
+                        <td>{{gf}}</td>
+                        <td>{{ga}}</td>
+                        <td>{{gd}}</td>
+                        <td>{{pts}}</td>
+                    </tr>
+                    {{/each}}
+
+                    </tbody>
+                </table>
+                <h2 class="tc title-item">主场</h2>
+                <table width="100%" border="0" cellspacing="0" class="analysis-jfbox">
+                    <thead>
+                    <tr>
+                        <th width="9%">赛事</th>
+                        <th width="19%">球队</th>
+                        <th width="9%">赛</th>
+                        <th width="9%">胜</th>
+                        <th width="9%">平</th>
+                        <th width="9%">负</th>
+                        <th width="9%">进球</th>
+                        <th width="9%">失球</th>
+                        <th width="9%">净胜</th>
+                        <th width="9%">积分</th>
+                    </tr>
+                    </thead>
+                    <tbody id="ana-tab">
+                    {{#each home}}
+                    <tr class="{{css}}">
+                        <td>{{i}}</td>
+                        <td class="tl">{{name}}</td>
+                        <td>{{gp}}</td>
+                        <td>{{w}}</td>
+                        <td>{{d}}</td>
+                        <td>{{l}}</td>
+                        <td>{{gf}}</td>
+                        <td>{{ga}}</td>
+                        <td>{{gd}}</td>
+                        <td>{{pts}}</td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+                <h2 class="tc title-item">客场</h2>
+                <table width="100%" border="0" cellspacing="0" class="analysis-jfbox">
+                    <thead>
+                    <tr>
+                        <th width="9%">赛事</th>
+                        <th width="19%">球队</th>
+                        <th width="9%">赛</th>
+                        <th width="9%">胜</th>
+                        <th width="9%">平</th>
+                        <th width="9%">负</th>
+                        <th width="9%">进球</th>
+                        <th width="9%">失球</th>
+                        <th width="9%">净胜</th>
+                        <th width="9%">积分</th>
+                    </tr>
+                    </thead>
+                    <tbody id="ana-tab">
+                    {{#each away}}
+                    <tr class="{{css}}">
+                        <td>{{i}}</td>
+                        <td class="tl">{{name}}</td>
+                        <td>{{gp}}</td>
+                        <td>{{w}}</td>
+                        <td>{{d}}</td>
+                        <td>{{l}}</td>
+                        <td>{{gf}}</td>
+                        <td>{{ga}}</td>
+                        <td>{{gd}}</td>
+                        <td>{{pts}}</td>
+                    </tr>
+                    {{/each}}
+
+
+                    </tbody>
+                </table>
+                <!--<p class="tc title-item">
+	            	<span>数据源合作：</span><span><img src="img/logo_genius.png"/></span>
+	            </p>-->
+            </div>
+            </script>
+        </div>
+        <!--统计-->
+        <div class="analysis-box oh dn " id = "statisticsBox">
+            <section class="bjcolor"><div class="live-title tc">统计</div></section>
+            <div id="statisticsHtml"></div>
+            <script id="statisticsTemp" type="text/x-handlebars-template">
+            <div class="stati-box oh">
+            <div class="cross-title tc">对阵双方数据</div>
+            <table width="100%" border="0" cellspacing="0" class="cross-row">
+                <thead>
+                <tr>
+                    <th colspan="10">{{home.cName}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>已赛</td>
+                    <td>进球</td>
+                    <td>黄牌</td>
+                    <td>红牌</td>
+                    <td>射正</td>
+                    <td>射偏</td>
+                    <td>角球</td>
+                    <td>犯规</td>
+                    <td>控球</td>
+                    <td>越位</td>
+                </tr>
+                <tr class="history-bj">
+                    <td>{{home.gp}}</td>
+                    <td>{{home.gf}}</td>
+                    <td>{{home.yc}}</td>
+                    <td>{{home.rc}}</td>
+                    <td>{{home.st}}</td>
+                    <td>{{home.sw}}</td>
+                    <td>{{home.co}}</td>
+                    <td>{{home.fc}}</td>
+                    <td>{{home.poss}}</td>
+                    <td>{{home.of}}</td>
+
+                </tr>
+                </tbody>
+            </table>
+            <table width="100%" border="0" cellspacing="0" class="cross-row">
+                <thead>
+                <tr>
+                    <th colspan="10">{{away.cName}}</th>
+                </tr>
+                </thead>
+                <tbody id="ana-tab">
+                <tr>
+                    <td>已赛</td>
+                    <td>进球</td>
+                    <td>黄牌</td>
+                    <td>红牌</td>
+                    <td>射正</td>
+                    <td>射偏</td>
+                    <td>角球</td>
+                    <td>犯规</td>
+                    <td>控球</td>
+                    <td>越位</td>
+                </tr>
+                <tr class="history-bj">
+                    <td>{{away.gp}}</td>
+                    <td>{{away.gf}}</td>
+                    <td>{{away.yc}}</td>
+                    <td>{{away.rc}}</td>
+                    <td>{{away.st}}</td>
+                    <td>{{away.sw}}</td>
+                    <td>{{away.co}}</td>
+                    <td>{{away.fc}}</td>
+                    <td>{{away.poss}}</td>
+                    <td>{{away.of}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+                <div class="cross-chart oh">
+                    <canvas id="statisticsBar" width="360" height="150"></canvas>
+                </div>
+                </script>
+            <div id="statisticsAllHtml"></div>
+            <script id="statisticsAllTemp" type="text/x-handlebars-template">
+            <div class="cross-title tc">所有球队</div>
+            <div class="stati-tabbox-tit oh">
+                <div class="rank-tit">排列顺序</div>
+                <div class="stai-select dn" >
+                    <select>
+                        <option>进球数</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                </div>
+                <div class="stai-select">
+                    <select>
+                        <option>从大到小</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                </div>
+            </div>
+            <table width="100%" border="0" cellspacing="0" class="stati-tabbox">
+                <thead>
+                <tr>
+                    <th>球队</th>
+                    <th>已赛</th>
+                    <th>进球</th>
+                    <th>黄牌</th>
+                    <th>红牌</th>
+                    <th>射正</th>
+                    <th>角球</th>
+                    <th>犯规</th>
+                    <th>控球</th>
+                    <th>越位</th>
+                </tr>
+                </thead>
+                <tbody id="ana-tab">
+                <tr class="history-bj">
+                    <td>曼彻斯特联</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>5</td>
+                </tr>
+                </tbody>
+            </table>
+          
+            </script>
+            <!--<p class="tc title-item">
+	            	<span>数据源合作：</span><span><img src="img/logo_genius.png"/></span>
+	        </p>-->
+        </div>
+        </div>
+        <!--交锋-->
+        <div class="analysis-box dn oh cross-swords" id="head2HeadBox">
+            <section class="bjcolor"><div class="cross-title tc">球队战绩</div></section>
+            <div id="head2HeadHtml"></div>
+            <script id="head2HeadTemp" type="text/x-handlebars-template">
+
+            <div class="cross-tab">
+                <div class="cross-tab-t">
+                    <p class="dl">{{hcName}}</p>
+                    <p class="dl"></p>
+                    <p class="dr">{{acName}}</p>
+                </div>
+                <table>
+                    <tr>
+                        <td>{{length}}</td>
+                        <td>交锋次数</td>
+                        <td>{{length}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{h.w}}</td>
+                        <td>胜</td>
+                        <td>{{a.w}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{h.d}}</td>
+                        <td>平</td>
+                        <td>{{a.d}}</td>
+                    </tr>
+                    <tr>
+                        <td>{{h.l}}</td>
+                        <td>负</td>
+                        <td>{{a.l}}</td>
+                    </tr>
+                </table>
+                <div class="tc t14 cross-name">{{hcName}}</div>
+                <div class="cross-round" id="head2HeadHomePieBox">
+                    <canvas id="head2HeadHomePie"></canvas>
+                </div>
+                <div class="legend">
+                    <p>胜</p>
+                    <p>平</p>
+                    <p>负</p>
+                </div>
+                <div class="tc t14 cross-name">{{acName}}</div>
+                <div class="cross-round">
+                    <canvas id="head2HeadAwayPie"></canvas>
+
+                </div>
+                <div class="legend">
+                    <p>胜</p>
+                    <p>平</p>
+                    <p>负</p>
+                </div>
+            </div>
+                <div id="head2HeadStatistics"></div>
+
+            <div class="cross-title tc">对阵双方数据</div>
+            <table width="100%" border="0" id="head2HeadVs" cellspacing="0" class="cross-row">
+
+                <tbody class="cross-chart-2">
+                <tr>
+                    <td>时间</td>
+                    <td>主队</td>
+                    <td>比分</td>
+                    <td>客队</td>
+                    <td>联赛</td>
+                    <td>赛季</td>
+                </tr>
+                {{#each vs}}
+                <tr>
+                    <td>{{{date}}}</td>
+                    <td>{{hcName}}</td>
+                    <td>{{homeScore}}:{{awayScore}}</td>
+                    <td>{{acName}}</td>
+                    <td>{{league}}</td>
+                    <td>{{season}}</td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+           <!--<p class="tc title-item">
+	            	<span>数据源合作：</span><span><img src="img/logo_genius.png"/></span>
+	        </p>-->
+                </script>
+        </div>
+        <!--赛程-->
+        <div class="analysis-box oh dn" id="fixturesBox">
+            <section class="bjcolor"><div class="live-title tc">赛程</div></section>
+            <div class="schedule">
+                <ul id="fixturesTab">
+                    <li class="sche-on">过去的</li>
+                    <li>未来的</li>
+                    <li>全部</li>
+                </ul>
+            </div>
+            <div class="sche-box oh"></div>
+            <div id="fixturesHtml"></div>
+            <script id="fixturesTemp" type="text/x-handlebars-template">
+                <div id="fixturesClosed">
+            <div class="cross-title tc">{{hcName}}已结束比赛战绩</div>
+            <table width="100%" border="0" cellspacing="0" class="cross-row">
+                <tbody class="cross-chart-2">
+                <tr>
+                    <td>时间</td>
+                    <td>主队</td>
+                    <td>比分</td>
+                    <td>客队</td>
+                </tr>
+
+
+                {{#each closed}}
+                <tr>
+                    <td>{{{date}}}</td>
+                    <td>{{hcName}}</td>
+                    <td>{{homeScore}} : {{awayScore}}</td>
+                    <td>{{acName}}</td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+                </div>
+                <div id="fixturesNotStarted" class="dn">
+            <div class="cross-title tc">{{hcName}}未开始比赛战绩</div>
+            <table width="100%" border="0" cellspacing="0" class="cross-row">
+                <tbody class="cross-chart-2">
+                <tr>
+                    <td>时间</td>
+                    <td>主队</td>
+                    <td>比分</td>
+                    <td>客队</td>
+                </tr>
+                {{#each notStarted}}
+                <tr>
+                    <td>{{{date}}}</td>
+                    <td>{{hcName}}</td>
+                    <td>{{homeScore}} : {{awayScore}}</td>
+                    <td>{{acName}}</td>
+                </tr>
+                {{/each}}
+
+                </tbody>
+            </table>
+                </div>
+            </script>
+            <!--<p class="tc title-item">
+	           <span>数据源合作：</span><span><img src="img/logo_genius.png"/></span>
+	        </p>-->
+        </div>
+
+        <!--球员榜-->
+        <div class="analysis-box dn" id="topScorersBox">
+            <section class="bjcolor"><div class="live-title tc">球员榜</div></section>
+            <div id="topScorersHtml"></div>
+
+            <script id="topScorersTemp" type="text/x-handlebars-template">
+                <!--
+                <div class="stati-tabbox-tit oh dn">
+                <div class="rank-tit">排列顺序</div>
+                <div class="stai-select">
+                    <select>
+                        <option>进球数</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                </div>
+                <div class="stai-select">
+                    <select>
+                        <option>从大到小</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                    </select>
+                </div>
+            </div>
+            -->
+                <table width="100%" border="0" cellspacing="0" class="playelist-tab t12">
+                <thead>
+                <tr>
+                    <th width="32%">球员</th>
+                    <th width="20%">球队</th>
+                    <th width="12%">出场</th>
+                    <th width="12%">进球</th>
+                    <th width="12%">黄牌</th>
+                    <th width="12%">红牌</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each val}}
+                <tr class="{{css}}">
+                    <td>{{playerName}}</td>
+                    <td class="tl">{{cName}}</td>
+                    <td>{{gp}}</td>
+                    <td>{{gf}}</td>
+                    <td>{{yc}}</td>
+                    <td>{{rc}}</td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+            </script>
+            <!--<p class="tc title-item">
+	            	<span>数据源合作：</span><span><img src="img/logo_genius.png"/></span>
+	        </p>-->
+           
+        </div>
+    </section>
+   <!-- <footer class="footer tr">Genius Sports Group Limited, 25a Soho Square London, W1D 4FA</footer>-->
+    <!--联系方式20161213-->
+    <!--<section class="footer-inform">
+    	<div class="infonm-lister">
+        	<p>电话：010-80699202</p>
+            <p class="inform-li-mail">邮件：sales@wozhongla.com</p>
+            <p class="inform-li-qq">QQ：26969223</p>
+        </div>
+    </section>   -->
+</section>
+<script src="js/lib/Chart.js"></script>
+<script src="js/sea.js" id="seajsnode"></script>
+<script src="js/config.js"></script>
+<script>
+    seajs.use('data', function (main) {
+        main.init();
+    })
+</script>
+</body>
+</html>
+

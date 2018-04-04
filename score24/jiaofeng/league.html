@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>  </title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pagination.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+</head>
+<body>
+<header id="header-box">
+    <a href="javascript:history.go(-1);" class="herd-back ls-title">联赛筛选</a>
+</header>
+<!--联赛筛选-->
+<section id="ls-wrap-box">
+
+	<div class="ls-list-tit oh">联赛推荐</div>
+	<div class="ls-all-game oh">
+        	<a href="index.html?leagueId=85449">阿甲</a>
+        	<a href="index.html?leagueId=144292">巴甲</a>
+        	<a href="index.html?leagueId=439844">中超</a>
+        	<a href="index.html?leagueId=6117">英超</a>
+        	<a href="index.html?leagueId=47164">英足总杯</a>
+        	<a href="index.html?leagueId=6114">法甲</a>
+        	<a href="index.html?leagueId=6115">德甲</a>
+        	<a href="index.html?leagueId=6111">意甲</a>
+        	<a href="index.html?leagueId=308090">日职</a>
+        	<a href="index.html?leagueId=6118">荷甲</a>
+        	<a href="index.html?leagueId=6121">葡甲</a>
+        	<a href="index.html?leagueId=255467">俄超</a>
+        	<a href="index.html?leagueId=613774">K联赛</a>
+        	<a href="index.html?leagueId=6112">西甲</a>
+        	<a href="index.html?leagueId=6155">土超</a>
+    </div>
+    <div class="ls-country oh">按国家选择联赛</div>
+    <div class="country-box">
+    	<div class="country-flot dn">
+        	<a href="javascript:;">A</a>
+            <a href="javascript:;">B</a>
+            <a href="javascript:;">C</a>
+            <a href="javascript:;">D</a>
+            <a href="javascript:;">E</a>
+            <a href="javascript:;">F</a>
+            <a href="javascript:;">G</a>
+            <a href="javascript:;">H</a>
+            <a href="javascript:;">I</a>
+            <a href="javascript:;">J</a>
+            <a href="javascript:;">K</a>
+            <a href="javascript:;">L</a>
+            <a href="javascript:;">M</a>
+            <a href="javascript:;">N</a>
+            <a href="javascript:;">O</a>
+            <a href="javascript:;">P</a>
+            <a href="javascript:;">Q</a>
+            <a href="javascript:;">R</a>
+            <a href="javascript:;">S</a>
+            <a href="javascript:;">T</a>
+            <a href="javascript:;">U</a>
+            <a href="javascript:;">V</a>
+            <a href="javascript:;">W</a>
+            <a href="javascript:;">X</a>
+            <a href="javascript:;">Y</a>
+            <a href="javascript:;">Z</a>
+        </div>
+        <div id="nationBox"></div>
+        <div id="leagueBox"></div>
+
+    </div>
+    <script id="nationTemp" type="text/x-handlebars-template">
+        {{#each list}}
+        {{{codeHtml}}}
+        <ul class="country-tit-box">
+            <li data-inx="{{inx}}">{{name}}</li>
+        </ul>
+        {{/each}}
+    </script>
+    <script id="leagueTemp" type="text/x-handlebars-template">
+        <h2 class="country-tit-b">{{name}}</h2>
+        <div class="country-tit-box">
+        {{#each leagues}}
+            <a href="index.html?leagueId={{id}}">{{name}}</>
+        {{/each}}
+        </div>
+    </script>
+</section>
+<!--联赛筛选_结束-->
+<script src="js/sea.js" id="seajsnode"></script>
+<script src="js/config.js"></script>
+<script>
+    seajs.use('league', function (main) {
+        main.init();
+    })
+</script>
+
+</body>
+</html>
+
